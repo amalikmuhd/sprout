@@ -1,20 +1,47 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+// import { SafeAreaView } from "react-native-safe-area-context";
+import { createStackNavigator } from "@react-navigation/stack";
+import WelcomeScreen from "./app/screens/WelcomeScreen";
+import LoginScreen from "./app/screens/LoginScreen";
+import ProfileScreen from "./app/screens/ProfileScreen";
+import { Provider } from "react-redux";
+import { Store } from "./app/store";
 
-export default function App() {
+function MyStack() {
+  const Stack = createStackNavigator();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Stack.Navigator
+      screenOptions={{
+        title: "",
+        headerStyle: {
+          height: 0, // Specify the height of your custom header
+        },
+        headerMode: "screen",
+      }}
+    >
+      <Stack.Screen name="Home" component={WelcomeScreen} />
+      <Stack.Screen
+        name="LoginScreen"
+        component={LoginScreen}
+        options={{ headerShown: false, gestureEnabled: false }}
+      />
+      <Stack.Screen
+        name="ProfileScreen"
+        component={ProfileScreen}
+        options={{ headerShown: false, gestureEnabled: false }}
+      />
+    </Stack.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  return (
+    <NavigationContainer>
+      {/* <SafeAreaView> */}
+      <Provider store={Store}>
+        <MyStack />
+      </Provider>
+      {/* </SafeAreaView> */}
+    </NavigationContainer>
+  );
+}
