@@ -3,6 +3,7 @@ import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 import logo from "../assets/logo.png";
 import BackgroundImage from "../assets/backgroudImage.png";
 import AppButton from "../components/AppButton";
+
 export default function WelcomeScreen({ navigation }) {
   return (
     <View style={styles.container}>

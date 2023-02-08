@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useSelector } from "react-redux";
 import { Ionicons } from "@expo/vector-icons";
@@ -7,7 +7,7 @@ import CustomTopBar from "../components/CustomTopBar";
 import AppListData from "../components/AppListData";
 
 export default function ProfileScreen({ navigation }) {
-  const mappeddata = useSelector((state) => state.AuthReducers.getLoginDetailsData);
+  const userData = useSelector((state) => state.AuthReducers.getLoginDetailsData);
 
   return (
     <View style={styles.container}>
@@ -23,9 +23,9 @@ export default function ProfileScreen({ navigation }) {
           }
         />
         <FlatList
-          data={[{ name: mappeddata.name, email: mappeddata.email }]}
+          data={[{ name: userData.name, email: userData.email }]}
           renderItem={({ item }) => (
-            <AppListData iconTitle={mappeddata.name.slice(0, 1)} name={item.name} email={item.email} />
+            <AppListData iconTitle={userData.name.slice(0, 1)} name={item.name} email={item.email} />
           )}
         />
 

@@ -1,8 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 
-export default function CustomTopBar({ onPress, icon }) {
+export default function CustomTopBar({ icon }) {
   return (
     <View style={styles.containerStyle}>
       <View style={styles.firstRowStyle}>{icon}</View>

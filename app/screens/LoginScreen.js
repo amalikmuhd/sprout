@@ -79,7 +79,6 @@ export default function LoginScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: "flex-start",
     alignItems: "center",
     marginTop: 90,
   },
@@ -110,6 +109,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: "80%",
-    // backgroundColor: "red",
   },
 });
