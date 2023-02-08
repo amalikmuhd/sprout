@@ -1,8 +1,9 @@
 import { StatusBar } from "expo-status-bar";
 import { FlatList, Platform, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useSelector } from "react-redux";
 import { Ionicons } from "@expo/vector-icons";
+import { useSelector } from "react-redux";
+
 import CustomTopBar from "../components/CustomTopBar";
 import AppListData from "../components/AppListData";
 
@@ -43,5 +44,12 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 
-  iconStyle: { marginRight: 10, fontSize: 40, textTransform: "uppercase", color: "white" },
+  iconStyle: {
+    marginRight: 10,
+    fontSize: 40,
+    textTransform: "uppercase",
+    color: "white",
+    backgroundColor: "transparent",
+    borderRadius: "50%",
+  },
 });

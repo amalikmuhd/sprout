@@ -1,7 +1,12 @@
 import { Image, ImageBackground, StyleSheet, StatusBar, Text, View, Platform } from "react-native";
+
+import AppButton from "../components/AppButton";
+
 import logo from "../assets/logo.png";
 import BackgroundImage from "../assets/backgroudImage.png";
-import AppButton from "../components/AppButton";
+
+import colors from "../config/colors";
+import fonts from "../config/fonts";
 
 export default function WelcomeScreen({ navigation }) {
   return (
@@ -12,8 +17,6 @@ export default function WelcomeScreen({ navigation }) {
         <AppButton
           title={"Sign Up"}
           marginTop={5}
-          textColor="#EC268F"
-          backgroundColor={"white"}
           onPress={() => {
             navigation.navigate("LoginScreen");
           }}
@@ -21,8 +24,8 @@ export default function WelcomeScreen({ navigation }) {
         <AppButton
           title={"Log In"}
           marginTop={45}
-          backgroundColor={"#EC268F"}
-          textColor="white"
+          backgroundColor={colors.primary}
+          textColor={colors.white}
           onPress={() => {
             navigation.navigate("LoginScreen");
           }}
@@ -57,13 +60,9 @@ const styles = StyleSheet.create({
   welcomeStyle: {
     marginTop: 0,
     marginBottom: 40,
-    color: "#EC268F",
-    fontSize: 52,
+    color: colors.primary,
+    fontSize: fonts.large,
     fontWeight: "700",
     textAlign: "center",
-  },
-
-  signUpStyle: {
-    backgroundColor: "white",
   },
 });

@@ -1,10 +1,16 @@
 import { Image, StyleSheet, Text, View, ScrollView } from "react-native";
-import logo from "../assets/logo.png";
-import AppButton from "../components/AppButton";
-import Input from "react-native-input-style";
 import { useState } from "react";
+
+import Input from "react-native-input-style";
+
+import AppButton from "../components/AppButton";
+import logo from "../assets/logo.png";
+
 import { useDispatch } from "react-redux";
 import { getLoginDetailsAction } from "../store/actions/authActions";
+
+import colors from "../config/colors";
+import fonts from "../config/fonts";
 
 export default function LoginScreen({ navigation }) {
   const dispatch = useDispatch();
@@ -90,9 +96,8 @@ const styles = StyleSheet.create({
   welcomeStyle: {
     marginTop: 30,
     marginBottom: 30,
-    color: "#D42486",
-    fontSize: 42,
-    lineHeight: 84,
+    color: colors.primary,
+    fontSize: fonts.medium,
     fontWeight: "bold",
     textAlign: "center",
   },
