@@ -16,6 +16,8 @@ export default function LoginScreen({ navigation }) {
     if (name.trim() !== "" && email.trim() !== "") {
       dispatch(getLoginDetailsAction({ name: name, email: email }));
       navigation.navigate("ProfileScreen");
+    } else {
+      setName("Fields are required to be filled");
     }
   };
 
@@ -24,6 +26,7 @@ export default function LoginScreen({ navigation }) {
       <View style={styles.container}>
         <Image source={logo} style={styles.imageStyle} />
         <Text style={styles.welcomeStyle}>Set up Profile</Text>
+
         <View style={styles.ViewStyled}>
           <Input
             onlyEnglish
@@ -37,7 +40,8 @@ export default function LoginScreen({ navigation }) {
             outlined
             inputStyle={styles.inputStyle}
             labelStyle={{ backgroundColor: "#f2f2f2" }}
-            autoCompleteType="off"
+            spellCheck={false}
+            autoCorrect={false}
           />
         </View>
 
@@ -58,7 +62,8 @@ export default function LoginScreen({ navigation }) {
             outlined
             inputStyle={styles.inputStyle}
             labelStyle={{ backgroundColor: "#f2f2f2" }}
-            autoCompleteType="off"
+            spellCheck={false}
+            autoCorrect={false}
           />
         </View>
 

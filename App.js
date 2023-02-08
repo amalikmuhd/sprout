@@ -36,12 +36,10 @@ function MyStack() {
 
 export default function App() {
   return (
-    <NavigationContainer>
-      {/* <SafeAreaView> */}
-      <Provider store={Store}>
+    <Provider store={Store}>
+      <NavigationContainer>
         <MyStack />
-      </Provider>
-      {/* </SafeAreaView> */}
-    </NavigationContainer>
+      </NavigationContainer>
+    </Provider>
   );
 }
