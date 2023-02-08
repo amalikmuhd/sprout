@@ -1,4 +1,3 @@
-// import { StatusBar } from "expo-status-bar";
 import { Image, ImageBackground, StyleSheet, StatusBar, Text, View, Platform } from "react-native";
 import logo from "../assets/logo.png";
 import BackgroundImage from "../assets/backgroudImage.png";
@@ -10,10 +9,18 @@ export default function WelcomeScreen({ navigation }) {
       <ImageBackground source={BackgroundImage} resizeMode="cover" style={styles.image}>
         <Image source={logo} style={styles.imageStyle} />
         <Text style={styles.welcomeStyle}>Welcome</Text>
-        <AppButton title={"Sign Up"} onPress={() => navigation.navigate("LoginScreen")} />
+        <AppButton
+          title={"Sign Up"}
+          marginTop={5}
+          textColor="#EC268F"
+          backgroundColor={"white"}
+          onPress={() => {
+            navigation.navigate("LoginScreen");
+          }}
+        />
         <AppButton
           title={"Log In"}
-          marginTop={50}
+          marginTop={45}
           backgroundColor={"#EC268F"}
           textColor="white"
           onPress={() => {
