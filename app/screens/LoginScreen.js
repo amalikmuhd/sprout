@@ -52,7 +52,6 @@ export default function LoginScreen({ navigation }) {
             keyboardType="default"
             required
             email={true}
-            maxLength={20}
             autoCapitalize="none"
             errorText="Email is required"
             onInputChange={(_, s) => {

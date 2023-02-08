@@ -1,5 +1,5 @@
-import { StatusBar } from "expo-status-bar";
-import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
+// import { StatusBar } from "expo-status-bar";
+import { Image, ImageBackground, StyleSheet, StatusBar, Text, View, Platform } from "react-native";
 import logo from "../assets/logo.png";
 import BackgroundImage from "../assets/backgroudImage.png";
 import AppButton from "../components/AppButton";
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "flex-start",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 
   image: {
